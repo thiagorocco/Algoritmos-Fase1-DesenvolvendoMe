@@ -6,8 +6,8 @@
                 <li>1.1. Searching Algorithms</li>
                 <li>1.1.1. Linear Search, básico</li>
                 <li>1.1.2. Binary Search, fácil</li>
+                <li>1.2. Sorting Algorithms</li>
                 <ul>
-                    <li>1.2. Sorting Algorithms</li>
                     <li>1.2.1. Bubble Sort, fácil</li>
                     <li>1.2.2. Counting Sort, fácil</li>
                 </ul>
