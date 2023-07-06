@@ -7,7 +7,7 @@ def limpar_tela():
     limpar = 'cls' if so == 'Windows' else 'clear'
     os.system(limpar) or None
 
-def busca_linear(chave):
+def busca_linear(chave,lista):
     checagem = 1   
     for i in lista:
         if chave == i:
@@ -26,7 +26,7 @@ while True:
         print('Digite apenas números inteiros para ser buscado!')
         input('Pressione qualquer tecla para continuar')
 
-if busca_linear(chave):
-    print(f'Chave encontrada após {busca_linear(chave)} checagens')
+if busca_linear(chave,lista):
+    print(f'Chave encontrada após {busca_linear(chave,lista)} checagens')
 else:
     print('Chave não encontrada')
