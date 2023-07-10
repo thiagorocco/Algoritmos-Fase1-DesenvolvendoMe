@@ -11,19 +11,17 @@ def limpar_tela():
 def busca_binaria(n,lista):
     inicio = 0
     fim = len(lista)
-    meio = int((inicio+fim)/2)
+    
+    while inicio <= fim:
+        meio = inicio + (fim-inicio)//2
 
-    checagens = 1
-    acha = False
-
-    while inicio <= fim and acha == False:
-        if n == lista[meio]:
-            return checagens
-        elif n > lista[meio]:
+        if lista[meio] == n:
+            return meio
+        elif lista[meio] < n:
             inicio = meio + 1 
         else:
             fim = meio - 1  
-
+    return -1
 
 lista = [2,7,11,16,24,37,42,53,61,67,74,85]
 
@@ -36,5 +34,8 @@ while True:
         print('O valor digitado não é um número inteiro')
         input('Pressione qualquer tecla para continuar')
 
-busca_binaria(n,lista)
+if busca_binaria(n,lista):
+    print('Elemento encontrado na posição: ',busca_binaria(n,lista)+1)
+else:
+    print('Elemento não encontrado')
 
