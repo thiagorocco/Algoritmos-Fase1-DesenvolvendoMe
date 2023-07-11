@@ -34,7 +34,7 @@ while True:
         print('O valor digitado não é um número inteiro')
         input('Pressione qualquer tecla para continuar')
 
-if busca_binaria(n,lista):
+if busca_binaria(n,lista) != -1:
     print('Elemento encontrado na posição: ',busca_binaria(n,lista)+1)
 else:
     print('Elemento não encontrado')
