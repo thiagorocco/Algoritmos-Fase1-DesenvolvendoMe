@@ -10,8 +10,7 @@
     4. O segundo laço vai percorrer de j=0 até (tamanho da lista - valor atual de i - 1)
     5. Dentro do segundo for haverá uma checagem se lista[j] > lista[j+1]. Se sim haverá troca e a variável "troca" se torna True
     6. Logo após a declaração do segundo for, mas agora dentro do primeiro for faça uma checagem
-    se a variável troca é False, se sim dê um comando break e encerre o algoritmo
-    7. Por fim retorne a nova lista ordenada 
+    se a variável troca é False, se sim dê um comando break e encerre o algoritmo 
 
 '''
 def bubbleSort(lista):
@@ -24,9 +23,8 @@ def bubbleSort(lista):
                 troca = True
         if not troca:
             break
-    return lista
 
 lista = [8,14,3,25,7,16,4,33]
-lista_ordenada = bubbleSort(lista)
 print('Lista desordenada: ',lista)
-print('Lista ORDENADA: ',lista_ordenada)
+bubbleSort(lista)
+print('Lista ORDENADA: ',lista)
