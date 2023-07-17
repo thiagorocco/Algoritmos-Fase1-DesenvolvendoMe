@@ -16,7 +16,7 @@
 '''
 def bubbleSort(lista):
     tam = len(lista)
-    for i in tam:
+    for i in range(tam):
         troca = False
         for j in range(0,tam-i-1):
             if lista[j]>lista[j+1]:
