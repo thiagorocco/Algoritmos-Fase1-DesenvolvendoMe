@@ -31,12 +31,13 @@ def ordenacaoContagem(arr):
         output[count[ord(arr[i])]-1] = arr[i]
         count[ord(arr[i])] -= 1
 
-    # Copie o array de saída para arr, de modo que arr agora contenha os caracteres ordenados
+    # Copie o array de saída para arr, 
+    # de modo que arr agora contenha os caracteres ordenados
     for i in range(len(arr)):
         ans[i] = output[i]
     return ans
 
-arr = "bananasplit"
+arr = "abacate"
 ans = ordenacaoContagem(arr)
 merge_chars = "".join(ans)
 
