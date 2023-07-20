@@ -17,6 +17,7 @@
     Dessa forma o valor 2 será inserido na posição 4 do array resultado.
     8. Depois de inserir o valor no array resultado é preciso decrementar em -1
     o valor associado no array de contagem, então se na posição 2 tinha-se 4, agora terá 3
+    9. Dessa forma cada elemento associado será inserido no array de resultado na ordem correta
 '''
 
 
