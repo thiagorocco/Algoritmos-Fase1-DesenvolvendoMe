@@ -23,9 +23,6 @@
 
 def ordenacaoContagem(arr):
 
-    if not isinstance(arr,str):
-        arr = "".join(arr)
-        
     # o array de saída(output) que terá arr ordenado
     #output = [0 for i in range(len(arr))]
     output = ["" for _ in arr]
@@ -36,25 +33,35 @@ def ordenacaoContagem(arr):
     #Varra o array "arr" pegando cada elemento dele com i
     #A cada interação uma posição de count será incrementada, essa posição será com base
     #no código ascii do valor de i. Pois um array pode conter números, letras e caracteres
-    # 
-    for i in arr:
-        count[ord(i)] += 1
+    #
+    if isinstance(arr,str): 
+        for i in arr:
+            count[ord(i)] += 1
+    else:
+        for i in arr:
+            count[i] += 1
 
     #5. Soma do elemento atual com o anterior no array de contagem
     for i in range(256):
         count[i] += count[i-1]
 
-    #A cada interação 
-    for i in range(len(arr)):
-        output[count[ord(arr[i])]-1] = arr[i]
-        count[ord(arr[i])] -= 1
-   
+    #A cada interação
+    if isinstance(arr,str):  
+        for i in range(len(arr)):
+            output[count[ord(arr[i])]-1] = arr[i]
+            count[ord(arr[i])] -= 1
+    else:
+        for i in range(len(arr)):
+            output[count[arr[i]]-1] = arr[i]
+            count[arr[i]] -= 1
+
     return output
 
-#arr = "banana123"
-arr = [8,3,1,4,12]
+arr = "banana123"
+#arr = [8,3,1,4,12]
 ans = ordenacaoContagem(arr)
-merge_chars = "".join(ans)
+if isinstance(arr,str):
+    merge_chars = "".join(ans)
 
 print('Array "desordenado":', arr)
-print("Array \"ordenado\": % s" % (merge_chars))
+print("Array \"ordenado\": % s" % (ans))
