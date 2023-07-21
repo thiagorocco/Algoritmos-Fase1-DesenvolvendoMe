@@ -57,11 +57,11 @@ def ordenacaoContagem(arr):
 
     return output
 
-arr = "banana123"
-#arr = [8,3,1,4,12]
+#arr = "banana123"
+arr = [8,3,1,4,12]
 ans = ordenacaoContagem(arr)
 if isinstance(arr,str):
-    merge_chars = "".join(ans)
+    ans = "".join(ans)
 
 print('Array "desordenado":', arr)
 print("Array \"ordenado\": % s" % (ans))
