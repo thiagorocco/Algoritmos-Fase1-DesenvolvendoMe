@@ -23,28 +23,23 @@
 
 def ordenacaoContagem(arr):
 
+    if not isinstance(arr,str):
+        arr = "".join(arr)
+        
     # o array de saída(output) que terá arr ordenado
     #output = [0 for i in range(len(arr))]
     output = ["" for _ in arr]
 
     # Crie um array contador que guarde a contagem dos caracteres individuais e inicialize a contagem do array como O
-    #Se for string crie um array com 255 posições referente aos caracteres ascii
-    #Senão crie um array apenas com os elementos números 0 a 9
-    if isinstance(arr,str):
-        count = [0 for i in range(256)]
-    else:
-        count = [0 for i in range(10)]
+    count = [0 for i in range(256)]
 
     #Varra o array "arr" pegando cada elemento dele com i
     #A cada interação uma posição de count será incrementada, essa posição será com base
     #no código ascii do valor de i. Pois um array pode conter números, letras e caracteres
     # 
     for i in arr:
-        try:
-            int(i)
-            count[i] += 1
-        except:
-            count[ord(i)] += 1
+        count[ord(i)] += 1
+
     #5. Soma do elemento atual com o anterior no array de contagem
     for i in range(256):
         count[i] += count[i-1]
