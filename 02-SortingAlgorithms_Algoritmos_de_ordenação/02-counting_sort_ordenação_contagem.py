@@ -26,7 +26,7 @@ def ordenacaoContagem(arr):
     # o array de saída(output) que terá arr ordenado
     #output = [0 for i in range(len(arr))]
     output = ["" for _ in arr]
-
+    
     # Crie um array contador que guarde a contagem dos caracteres individuais e inicialize a contagem do array como O
     count = [0 for i in range(256)]
 
@@ -55,13 +55,14 @@ def ordenacaoContagem(arr):
             output[count[arr[i]]-1] = arr[i]
             count[arr[i]] -= 1
 
+    if isinstance(arr,str):
+        output = "".join(output)
+    
     return output
 
-#arr = "banana123"
-arr = [8,3,1,4,12]
+arr = "banana123"
+#arr = [8,3,1,4,12]
 ans = ordenacaoContagem(arr)
-if isinstance(arr,str):
-    ans = "".join(ans)
 
 print('Array "desordenado":', arr)
 print("Array \"ordenado\": % s" % (ans))
